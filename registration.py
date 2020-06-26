@@ -11,7 +11,6 @@ import student
 
 
 def main():
-
     # ------------------------------------------------------------
     # This function manages the whole registration system.  It has
     # no parameter.  It creates student list, course list,
@@ -30,7 +29,7 @@ def main():
     while id != "0":
         id = input("Enter ID to log in, or 0 to quit: ")
         if id == "0":
-             break
+            break
         success = login(id, student_list)
         if success == True:
             decision_tree = "1"
@@ -47,20 +46,11 @@ def main():
                     break
                 else:
                     print("Incorrect choice.")
-
-
-
-
-
-
-
-
-
-
+        else:
+            print("ID or PIN incorrect.")
 
 
 def login(id, s_list):
-
     # ------------------------------------------------------------
     # This function allows a student to log in.
     # It has two parameters: id and s_list, which is the student
@@ -68,6 +58,12 @@ def login(id, s_list):
     # combination is in s_list, display message of verification and
     # return True. Otherwise, display error message and return False.
     # -------------------------------------------------------------
-    pass
+    pin = input("Enter PIN: ")
+    for x in s_list:
+        if x[0] == id:
+            if x[1] == pin:
+                return True
+    return False
+
 
 main()

@@ -29,6 +29,8 @@ def main():
     id = 1
     while id != "0":
         id = input("Enter ID to log in, or 0 to quit: ")
+        if id == "0":
+             break
         success = login(id, student_list)
         if success == True:
             decision_tree = "1"
@@ -67,7 +69,5 @@ def login(id, s_list):
     # return True. Otherwise, display error message and return False.
     # -------------------------------------------------------------
 
-    success = True # temporarily avoid empty function definition
-    return success
 
 main()

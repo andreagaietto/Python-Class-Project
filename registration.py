@@ -23,7 +23,7 @@ def main():
 
     student_list = [('1001', '111'), ('1002', '222'), ('1003', '333'), ('1004', '444')]
     course_list = ['CSC101', 'CSC102', 'CSC103']
-    roster_list = [['1004', '1003', '1001'], ['1001'], ['1002']]
+    roster_list = [['1004', '1003'], ['1001'], ['1002']]
     max_size_list = [3, 2, 1]
     id = 1
     while id != "0":
@@ -32,6 +32,7 @@ def main():
             break
         success = login(id, student_list)
         if success == True:
+            print("ID and PIN verified.\n")
             decision_tree = "1"
             while decision_tree != "0":
                 decision_tree = input("Enter 1 to add course, 2 to drop course, 3 to list courses, 0 to exit: ")

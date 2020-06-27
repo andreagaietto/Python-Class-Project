@@ -35,13 +35,22 @@ def add_course(id, c_list, r_list, m_list):
 
     to_add = input("Enter the course you want to add: ")
     if to_add not in c_list:
-        print("Course not found.")
+        print("Course not found.\n")
         return
     for x in range(len(c_list)):
         if c_list[x] == to_add:
             if id in r_list[x]:
                 print("You are already enrolled in that course.\n")
                 return
+    for x in range(len(c_list)):
+        if c_list[x] == to_add:
+            if len(r_list[x]) == m_list[x]:
+                print("Course already full.\n")
+                return
+    for x in range(len(c_list)):
+        if c_list[x] == to_add:
+            r_list.insert(x, id)
+            print("Course added.\n")
 
 
 

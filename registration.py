@@ -43,12 +43,12 @@ def main():
                 elif decision_tree == "3":
                     student.list_courses(id, course_list, roster_list)
                 elif decision_tree == "0":
-                    print("Session ended.")
+                    print("Session ended.\n")
                     break
                 else:
-                    print("Incorrect choice.")
+                    print("Incorrect choice.\n")
         else:
-            print("ID or PIN incorrect.")
+            print("ID or PIN incorrect.\n")
 
 
 def login(id, s_list):

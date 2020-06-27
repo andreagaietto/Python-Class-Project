@@ -51,13 +51,8 @@ def add_course(id, c_list, r_list, m_list):
         if c_list[x] == to_add:
             r_list[x].append(id)
             print("Course added.\n")
-            print(r_list)
-
-
-
-
-
-
+            return
+    print("There has been an error.")
 
 
 
@@ -92,4 +87,6 @@ def drop_course(id, c_list, r_list):
         if c_list[x] == to_drop:
             r_list[x].remove(id)
             print("Course dropped.\n")
+            return
+    print("There has been an error.")
 

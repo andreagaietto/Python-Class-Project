@@ -49,8 +49,9 @@ def add_course(id, c_list, r_list, m_list):
                 return
     for x in range(len(c_list)):
         if c_list[x] == to_add:
-            r_list.insert(x, id)
+            r_list[x].append(id)
             print("Course added.\n")
+            print(r_list)
 
 
 
@@ -78,4 +79,17 @@ def drop_course(id, c_list, r_list):
     # no problem.  This function has no return value.
     # -------------------------------------------------------------
 
-    pass # temporarily avoid empty function definition
+    to_drop = input("Enter course you want to drop: ")
+    if to_drop not in c_list:
+        print("Course not found.\n")
+        return
+    for x in range(len(c_list)):
+        if c_list[x] == to_drop:
+            if id not in r_list[x]:
+                print("You are not enrolled in that course.\n")
+                return
+    for x in range(len(c_list)):
+        if c_list[x] == to_drop:
+            r_list[x].remove(id)
+            print("Course dropped.\n")
+

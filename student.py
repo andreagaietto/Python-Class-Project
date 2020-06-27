@@ -33,7 +33,26 @@ def add_course(id, c_list, r_list, m_list):
     # function has no return value.
     # -------------------------------------------------------------
 
-    pass
+    to_add = input("Enter the course you want to add: ")
+    if to_add not in c_list:
+        print("Course not found.")
+        return
+    for x in range(len(c_list)):
+        if c_list[x] == to_add:
+            if id in r_list[x]:
+                print("You are already enrolled in that course.\n")
+                return
+
+
+
+
+
+
+
+
+
+
+
 
 
 def drop_course(id, c_list, r_list):
